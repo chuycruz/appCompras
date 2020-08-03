@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "appCompras"
+    }
+  },
+  "defaultProject": "appCompras",
+  "cli": {
+    "analytics": false
+  }
 }

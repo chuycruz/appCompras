@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" [routerLink]="['']" routerLinkActive="router-link-active" >Compras</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [routerLink]="['']" routerLinkActive="router-link-active" >Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLink]="['/proveedores']" routerLinkActive="router-link-active" >Proveedores</a>
+      <a class="nav-item nav-link" [routerLink]="['/add-presupuesto']" routerLinkActive="router-link-active" >Añadir presupuesto</a>
+      <a class="nav-item nav-link" [routerLink]="['/presupuestos']" routerLinkActive="router-link-active" >Presupuestos</a>
+      <a class="nav-item nav-link" [routerLink]="['/registro']" routerLinkActive="router-link-active" >Registro</a>
+    </div>
+  </div>
+</nav>

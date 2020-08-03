@@ -1,0 +1,37 @@
+<div class="container mt-5">
+    <h3>Listado de proveedores</h3>
+    <hr>
+    <a [routerLink]="['/add-presupuesto']" routerLinkActive="router-link-active" class="btn btn-primary float-md-right mb-3" >Añadir presupuesto</a>
+    <table class="table table-bordered table-striped bg-dark text-light">
+        <thead>
+            <tr class="filters">
+                <th>Proveedor</th>
+                <th>Fecha</th>
+                <th>Concepto</th>
+                <th>Precio sin IVA</th>
+                <th>IVA</th>
+                <th>Total</th>
+                <th>Tools</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let presupuesto of presupuestos; let i = index">
+                <td>{{presupuesto.proveedor}}</td>
+                <td>{{presupuesto.fecha}}</td>
+                <td>{{presupuesto.concepto}}</td>
+                <td>{{presupuesto.base}}</td>
+                <td>{{presupuesto.iva}}</td>
+                <td>{{presupuesto.total}}</td>
+                <td>
+                    <button class="btn btn-warning" [routerLink]="['/editar-presupuesto/', presupuesto.id]" type="button">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="btn btn-danger ml-3" (click)="borrarPresupuesto(presupuesto, i)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

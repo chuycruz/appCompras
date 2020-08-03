@@ -1,0 +1,125 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col col-md"></div>
+        <div class="col-10 col-md-8">
+            <h2>Añadir nuevo proveedor</h2>
+            <form action="" (ngSubmit)="onSubmit()" #formPro = "ngForm">
+                <div class="form-group">
+                    <label >Nombre</label>
+                <input type="text" class="form-control"
+                                   id="nombre"
+                                   ngModel
+                                   name="nombre">
+                </div>
+
+                
+                <div class="form-group">
+                    <label >CIF</label>
+                <input type="text" class="form-control"
+                                   id="cif"
+                                   ngModel
+                                   name="cif">
+                </div>
+
+                
+                <div class="form-group">
+                    <label >Direccion</label>
+                <input type="text" class="form-control"
+                                   id="direccion"
+                                   ngModel
+                                   name="direccion">
+
+                </div>                   
+                <div class="form-group">
+                    <label >CP</label>
+                <input type="text" class="form-control"
+                                   id="cp"
+                                   ngModel
+                                   name="cp">
+                </div>
+
+                
+                <div class="form-group">
+                    <label >Localidad</label>
+                <input type="text" class="form-control"
+                                   id="localidad"
+                                   ngModel
+                                   name="localidad">
+                
+
+                </div>
+
+                
+                <div class="form-group">
+                    <label >Ciudad</label>
+               <select id="ciudad" class="form-control"
+                                    ngModel 
+                                    name="ciudad">
+                            <option value="">Seleccione una ciudad</option>
+                            <option *ngFor="let ciudad of ciudades" value="{{ciudad}}" >{{ciudad}}</option></select>
+                </div>
+
+                
+                <div class="form-group">
+                    <label >Teléfono</label>
+                <input type="number" class="form-control"
+                                   id="telefono"
+                                   ngModel
+                                   name="telefono">
+                </div>
+
+                
+                <div class="form-group">
+                    <label >Correo electrónico</label>
+                    <i class="fa fa-check-circle check"
+                        *ngIf="email.valid"></i>
+                    <i class="fa fa-check-circle uncheck"
+                        *ngIf="email.invalid && email.touched"></i>
+                <input type="email" class="form-control"
+                                   id="email"
+                                   ngModel
+                                   name="email"
+                                   required
+                                   email
+                                   #email="ngModel">
+                <p class="alert alert-danger"
+                    *ngIf="email.invalid && email.touched">Por favor introduzca un correo válido</p>
+                </div>
+
+                
+                <div class="form-group">
+                    <label >Contacto</label>
+                <input type="text" class="form-control"
+                                   id="contacto"
+                                   ngModel
+                                   name="contacto"
+                                   required>
+                </div>
+
+                <button 
+                    class="btn-success btn" 
+                    type="submit"
+                    [disabled]="!formPro.valid">
+                        Añadir proveedor
+                </button>
+                
+                <p class="alert alert-danger"
+                    *ngIf="formPro.invalid">
+                    Por favor complete todos los campos obligatorios
+                </p>
+            </form>
+            <hr>
+
+            <!--pre class="text-light">
+                {{proveedor | json}}
+            </pre-->
+
+            <!--h4>Estado Dirty: {{formPro.controls.email.dirty}}</h4>
+            <h4>Estado Pristine: {{formPro.controls.email.pristine}}</h4>
+            <h4>Estado touched: {{formPro.controls.email.touched}}</h4>
+            <h4>Estado valid: {{formPro.controls.email.valid}}</h4>
+            <h4>Estado invalid: {{formPro.controls.email.invalid}}</h4-->
+        </div>
+        <div class="col col-md"></div>
+    </div>
+</div>

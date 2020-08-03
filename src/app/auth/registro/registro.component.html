@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="row">
+    <div class="col col-md"></div>
+    <div class="col-10 col-md-6">
+        <form action="" class="form-group"
+            [formGroup]="registroForm"
+            (ngSubmit)="onSubmit()">
+            <h4>Introduzca sus datos de registro</h4>
+            <hr>
+            <label>Correo electrónico</label>
+            <input type="mail"
+                class="form-control"
+                id="inputEmail"
+                autofocus
+                formControlName="email">
+            
+            <label class="mt-3">Contraseña</label>
+            <input type="password"
+                class="form-control"
+                id="inputPassword"
+                formControlName="password">
+
+            <button class="btn btn-primary mt-3"
+                type="submit">
+                Registrar
+            </button>
+        </form>
+    </div>
+    <div class="col col-md"></div>
+    </div>
+</div>
