@@ -16,6 +16,7 @@ export class EditarPresupuestoComponent implements OnInit {
   tipo: any
   iva: any = 0;
   total: any = 0;
+  proveedor:string
 
   id:string
 

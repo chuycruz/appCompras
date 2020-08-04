@@ -5,11 +5,12 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" [routerLink]="['']" routerLinkActive="router-link-active" >Inicio <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" [routerLink]="['/proveedores']" routerLinkActive="router-link-active" >Proveedores</a>
-      <a class="nav-item nav-link" [routerLink]="['/add-presupuesto']" routerLinkActive="router-link-active" >Añadir presupuesto</a>
-      <a class="nav-item nav-link" [routerLink]="['/presupuestos']" routerLinkActive="router-link-active" >Presupuestos</a>
-      <a class="nav-item nav-link" [routerLink]="['/registro']" routerLinkActive="router-link-active" >Registro</a>
+      <a class="nav-item nav-link" [routerLink]="['/inicio']" routerLinkActive="router-link-active" *ngIf="isAuth()">Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLink]="['/proveedores']" routerLinkActive="router-link-active" *ngIf="isAuth()">Proveedores</a>
+      <a class="nav-item nav-link" [routerLink]="['/add-presupuesto']" routerLinkActive="router-link-active" *ngIf="isAuth()">Añadir presupuesto</a>
+      <a class="nav-item nav-link" [routerLink]="['/presupuestos']" routerLinkActive="router-link-active" *ngIf="isAuth()">Presupuestos</a>
     </div>
   </div>
+  <button class="btn btn-primary float-right" [routerLink]="['/inicio-de-sesion']" routerLinkActive="router-link-active" *ngIf="!isAuth()">Login</button>
+  <button class="btn btn-danger float-right" (click)="logout()" routerLinkActive="router-link-active" *ngIf="isAuth()">Salir</button>
 </nav>

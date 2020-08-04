@@ -1,11 +1,11 @@
-<div class="container mt-5">
+<div class="container mt-5" *ngIf="!isAuth()">
     <div class="row">
     <div class="col col-md"></div>
     <div class="col-10 col-md-6">
         <form action="" class="form-group"
-            [formGroup]="registroForm"
+            [formGroup]="loginForm"
             (ngSubmit)="onSubmit()">
-            <h4>Introduzca sus datos de registro</h4>
+            <h4>Introduzca sus datos de usuario</h4>
             <hr>
             <label>Correo electrónico</label>
             <input type="mail"
@@ -13,27 +13,23 @@
                 id="inputEmail"
                 autofocus
                 formControlName="email">
-            <p class="alert alert-danger" *ngIf="erroresForm.email">
-                {{ erroresForm.email }}
-            </p>
             
             <label class="mt-3">Contraseña</label>
             <input type="password"
                 class="form-control"
                 id="inputPassword"
                 formControlName="password">
-            <p class="alert alert-danger" *ngIf="erroresForm.password">
-                {{ erroresForm.password }}
-            </p>
 
             <button class="btn btn-primary mt-3"
                 type="submit"
-                [disabled]="!registroForm.valid">
-                Registrar
+                [disabled]="!loginForm.valid">
+                Iniciar sesión
             </button>
         </form>
 
-        <p>Sí ya dispone de una cuenta, <a [routerLink]="['/inicio-de-sesion']" routerLinkActive="router-link-active" >inicie sesión</a>.</p>
+        <p>Si no dispone de una cuenta, <a [routerLink]="['/registro']" routerLinkActive="router-link-active" >registrese</a>.</p>
+
+        <p class="alert alert-danger" *ngIf="mensaje">El usuario o contraseña no es correcto</p>
     </div>
     <div class="col col-md"></div>
     </div>

@@ -5,8 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { ProveedoresService } from './servicios/proveedores.service';
-import { PresupuestosService } from './servicios/presupuestos.service';
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +13,12 @@ import { AddPresComponent } from './presupuestos/add-pres/add-pres.component';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditarPresupuestoComponent } from './presupuestos/editar-presupuesto/editar-presupuesto.component';
 import { RegistroComponent } from './auth/registro/registro.component'
+
+import { ProveedoresService } from './servicios/proveedores.service';
+import { PresupuestosService } from './servicios/presupuestos.service';
+import { AuthService } from './servicios/auth.service';
+import { InicioSesionComponent } from './auth/inicio-sesion/inicio-sesion.component';
+import { GuardService } from './servicios/guard.service';
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import { RegistroComponent } from './auth/registro/registro.component'
     AddPresComponent,
     PresupuestosComponent,
     EditarPresupuestoComponent,
-    RegistroComponent
+    RegistroComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,9 @@ import { RegistroComponent } from './auth/registro/registro.component'
   ],
   providers: [
     ProveedoresService,
-    PresupuestosService
+    PresupuestosService,
+    AuthService,
+    GuardService
   ],
   bootstrap: [AppComponent],
   
