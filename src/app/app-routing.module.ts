@@ -11,6 +11,7 @@ import { EditarPresupuestoComponent } from './presupuestos/editar-presupuesto/ed
 import { RegistroComponent } from './auth/registro/registro.component';
 import { InicioSesionComponent } from './auth/inicio-sesion/inicio-sesion.component';
 import { GuardService } from './servicios/guard.service';
+import { AgregarFacturaComponent } from './facturas/facturas/agregar-factura/agregar-factura.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent, canActivate: [GuardService]},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path:'editar-presupuesto/:id', component: EditarPresupuestoComponent, canActivate: [GuardService] },
   { path:'registro', component: RegistroComponent },
   { path:'inicio-de-sesion', component: InicioSesionComponent },
+  { path:'agregar-factura', component: AgregarFacturaComponent },
   {path: '**', component: InicioComponent, canActivate: [GuardService]}
 ]
 @NgModule({

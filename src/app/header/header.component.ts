@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  user: any
 
   constructor(private auth: AuthService,
               private router: Router) { }
@@ -23,6 +24,7 @@ export class HeaderComponent implements OnInit {
 
   isAuth() {
     return this.auth.isAutenticated()
+    const user = firebase.auth().currentUser
   }
 
 }

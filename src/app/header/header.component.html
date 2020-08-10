@@ -12,5 +12,6 @@
     </div>
   </div>
   <button class="btn btn-primary float-right" [routerLink]="['/inicio-de-sesion']" routerLinkActive="router-link-active" *ngIf="!isAuth()">Login</button>
+  <p class="text-light">{{user}}</p>
   <button class="btn btn-danger float-right" (click)="logout()" routerLinkActive="router-link-active" *ngIf="isAuth()">Salir</button>
 </nav>

@@ -3,6 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
+import { FacturasModule } from './facturas/facturas.module';
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireAuthModule } from 'angularfire2/auth'
+import { enviroment } from './Config/firebase.config'
 
 import { AppComponent } from './app.component';
 import { ProveedoresComponent } from './proveedores/proveedores/proveedores.component';
@@ -39,7 +44,11 @@ import { GuardService } from './servicios/guard.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FacturasModule, 
+    AngularFireModule.initializeApp(enviroment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule    
   ],
   providers: [
     ProveedoresService,

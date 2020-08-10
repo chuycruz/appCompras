@@ -22,8 +22,15 @@
 
             <button class="btn btn-primary mt-3"
                 type="submit"
-                [disabled]="!loginForm.valid">
+                [disabled]="!loginForm.valid"
+                *ngIf="!autenticando">
                 Iniciar sesión
+            </button>
+
+            <button class="btn btn-primary mt-3"
+                type="submit"
+                *ngIf="autenticando">
+                Autenticando usuario
             </button>
         </form>
 

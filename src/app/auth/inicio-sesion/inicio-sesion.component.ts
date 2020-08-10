@@ -13,6 +13,8 @@ export class InicioSesionComponent implements OnInit {
   userData: any
   mensaje: boolean = false
 
+  autenticando = false
+
   constructor(private formBuilder: FormBuilder,
               private router: Router,
               private auth: AuthService,
@@ -30,12 +32,15 @@ export class InicioSesionComponent implements OnInit {
   }
 
   onSubmit(){
+
+    this.autenticando = true
     this.userData = this.saverUserdata()
     this.auth.inicioSesion(this.userData)
     
     setTimeout(()=>{
       if(this.isAuth()===false){
         this.mensaje = true
+        this.autenticando = false
       }
     },2000)
   }

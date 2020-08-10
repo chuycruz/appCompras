@@ -10,10 +10,12 @@
                 <label for="proveedor">Proveedor</label>
                 <i class="fa fa-check-circle check" *ngIf="presupuestoForm.controls.proveedor.valid"></i>
                 <i class="fa fa-exclamation-circle uncheck" *ngIf="presupuestoForm.controls.proveedor.invalid && presupuestoForm.controls.proveedor.touched"></i>
-                <input type="text"
-                        class="form-control"
+                <select class="form-control"
                         id="proveedor"
                         formControlName="proveedor">
+                        <option value="">Selecciona un proveedor</option>
+                        <option *ngFor="let proveedor of proveedores" value="{{proveedor.nombre}}">{{proveedor.nombre}}</option>
+                </select>
 
             </div>
           
